@@ -3,6 +3,7 @@ import {cart}from "../types/products.ts";
 export default function Products(){
     return(
      <>
+     
      </>
     );
 }
