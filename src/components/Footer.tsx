@@ -1,6 +1,56 @@
-export default function Footer(){
-    return (
-        <>
-        </>
+import {
+    NavigationMenu,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList
+  } from "@/components/ui/navigation-menu"
+  import instagram from "../assets/instagram.png";
+  import facebook from "../assets/facebook.png";
+  import youtube from "../assets/youtube.png";
+  import twitter from "../assets/twitter.png";
+  export default function Footer(){
+    return(
+        <div className="bg-amber-300 flex justify-center h-20 items-center gap-20">
+             <NavigationMenu>
+        <NavigationMenuList>
+        <NavigationMenuItem>
+            <NavigationMenuLink href="/">
+            <img src={facebook} className="h-10"></img>
+            </NavigationMenuLink>
+        </NavigationMenuItem>
+        </NavigationMenuList>
+        </NavigationMenu>
+
+        <NavigationMenu>
+        <NavigationMenuList>
+        <NavigationMenuItem>
+            <NavigationMenuLink href="/">
+            <img src={instagram} className="h-10"></img>
+            </NavigationMenuLink>
+        </NavigationMenuItem>
+        </NavigationMenuList>
+        </NavigationMenu>
+ 
+        <NavigationMenu>
+        <NavigationMenuList>
+        <NavigationMenuItem>
+            <NavigationMenuLink href="/">
+            <img src={youtube} className="h-10"></img>
+            </NavigationMenuLink>
+        </NavigationMenuItem>
+        </NavigationMenuList>
+        </NavigationMenu>
+
+        <NavigationMenu>
+        <NavigationMenuList>
+        <NavigationMenuItem>
+            <NavigationMenuLink href="/cart" className="text-xl">
+            <img src={twitter} className="h-10 "></img>
+            </NavigationMenuLink>
+        </NavigationMenuItem>
+        </NavigationMenuList>
+        </NavigationMenu>
+  </div>
+
     )
 }

@@ -12,7 +12,7 @@ import {
              <NavigationMenu>
         <NavigationMenuList>
         <NavigationMenuItem>
-            <NavigationMenuLink href="/about">
+            <NavigationMenuLink href="/">
             <img src={logo} className="h-17"></img>
             </NavigationMenuLink>
         </NavigationMenuItem>
@@ -45,7 +45,7 @@ import {
         <NavigationMenu>
         <NavigationMenuList>
         <NavigationMenuItem>
-            <NavigationMenuLink href="/about" className="text-xl">
+            <NavigationMenuLink href="/cart" className="text-xl">
             <img src={shoppingcart} className="h-7 "></img>(0)
             </NavigationMenuLink>
         </NavigationMenuItem>
