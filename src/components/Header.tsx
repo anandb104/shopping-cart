@@ -4,6 +4,7 @@ import {
     NavigationMenuLink,
     NavigationMenuList
   } from "@/components/ui/navigation-menu"
+  import {NavLink} from "react-router-dom";
   import shoppingcart from "../assets/shopping-cart.png";
   import logo from "../assets/logo.png";
   export default function Header(){
@@ -12,8 +13,10 @@ import {
              <NavigationMenu>
         <NavigationMenuList>
         <NavigationMenuItem>
-            <NavigationMenuLink href="/">
+            <NavigationMenuLink asChild>
+            <NavLink to="/">
             <img src={logo} className="h-17"></img>
+            </NavLink>
             </NavigationMenuLink>
         </NavigationMenuItem>
         </NavigationMenuList>
@@ -22,20 +25,26 @@ import {
     <NavigationMenuList>
     <div className="flex justify-center gap-20 items-center">
         <NavigationMenuItem>
-            <NavigationMenuLink href="/" className="text-xl">
+            <NavigationMenuLink asChild className="text-xl">
+            <NavLink to="/"> 
             Home
+            </NavLink>
             </NavigationMenuLink>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-            <NavigationMenuLink href="/shop" className="text-xl">
+            <NavigationMenuLink asChild className="text-xl">
+            <NavLink to="/shop"> 
             Shop
+            </NavLink>
             </NavigationMenuLink>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-            <NavigationMenuLink href="/about" className="text-xl">
+            <NavigationMenuLink asChild className="text-xl">
+            <NavLink to="/about">
             About
+            </NavLink>
             </NavigationMenuLink>
         </NavigationMenuItem>
         </div>
@@ -45,8 +54,10 @@ import {
         <NavigationMenu>
         <NavigationMenuList>
         <NavigationMenuItem>
-            <NavigationMenuLink href="/cart" className="text-xl">
+            <NavigationMenuLink  asChild className="text-xl">
+            <NavLink to="/cart">
             <img src={shoppingcart} className="h-7 "></img>(0)
+            </NavLink>
             </NavigationMenuLink>
         </NavigationMenuItem>
         </NavigationMenuList>

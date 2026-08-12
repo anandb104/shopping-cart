@@ -3,7 +3,7 @@ import {
     NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuList
-  } from "@/components/ui/navigation-menu"
+  } from "@/components/ui/navigation-menu";
   import instagram from "../assets/instagram.png";
   import facebook from "../assets/facebook.png";
   import youtube from "../assets/youtube.png";
@@ -14,7 +14,7 @@ import {
              <NavigationMenu>
         <NavigationMenuList>
         <NavigationMenuItem>
-            <NavigationMenuLink href="/">
+            <NavigationMenuLink href="/" >
             <img src={facebook} className="h-10"></img>
             </NavigationMenuLink>
         </NavigationMenuItem>
