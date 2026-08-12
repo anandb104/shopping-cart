@@ -16,7 +16,7 @@ export default function Home(){
             <div className="mt-10 flex gap-10 flex-col">
         Shop. <br/>Discover.<br/> Enjoy.<br/>
 Find products you'll love at prices you'll appreciate. Browse our collection, discover new favorites, and make every shopping experience simple, convenient, and enjoyable.
-<Button className="self-start h-15 flex items-center">Shop Now<img src={logo} className="h-8 w-8 "></img></Button>
+<Button className="self-start h-15 flex items-center"><a href='/shop' className="flex items-center">Shop Now<img src={logo} className="h-8 w-8 "></img></a></Button>
 </div>
         </div>
     )
