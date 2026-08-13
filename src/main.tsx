@@ -9,7 +9,7 @@ import Shop from './components/Shop.tsx';
 import Cart from './components/Cart.tsx';
 import { createBrowserRouter,RouterProvider } from 'react-router';
 function Routerapp(){
-const [cart,setcart]=useState<Cartitems[]>([])
+const [cart,setcart]=useState<Cartitems[]>([]);
 function addtocart(product:Product){
   setcart((currentcart)=>{
     const exist=currentcart.find((item)=>(item.id==product.id));
@@ -19,15 +19,21 @@ function addtocart(product:Product){
     }
   });
 }
+function increase(product){
+  setcart((currentcart)=>{
+    const exist=currentcart.find((item)=>(item.id==product.id));
+    return currentcart.map((item)=>(item.id==product.id)?{...item,quantity:item.quantity+1}:item);
+  })
+}
 const router=createBrowserRouter([
   {
     path:"/",
     element:<App cart={cart}/>,
     children:[
     {path:"/",element:<Home/>},
-    {path:"/shop",element:<Shop addtocart={addtocart} cart={cart}/>},
+    {path:"/shop",element:<Shop addtocart={addtocart} cart={cart} increase={increase}/>},
     {path:"/about",element:<About/>},
-    {path:"/cart",element:<Cart cart={cart}/>},
+    {path:"/cart",element:<Cart cart={cart} increase={increase}/>},
     ]
   }
 ]);

@@ -6,11 +6,12 @@ import {
     CardTitle,
   } from "@/components/ui/card";
   import { Button } from "@/components/ui/button";
-  import type {Cartitems} from "../types/product.ts";
+  import type {Cartitems,Product} from "../types/product.ts";
   type cartcardprop={
-   cart:Cartitems
+   cart:Cartitems;
+   increase:(product:Product)=>void;
   };
-export default function Cartcard({cart}:cartcardprop){
+export default function Cartcard({cart,increase}:cartcardprop){
     return (
         <Card className="relative mx-auto max-w-sm pt-0 h-120 w-200 ">
         <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
@@ -27,7 +28,7 @@ export default function Cartcard({cart}:cartcardprop){
         </CardHeader>
         <CardFooter className="flex justify-between flex-1">
          <div>Price: {cart.price}$</div>
-          <Button className="w-20">+</Button>
+          <Button className="w-20" onClick={()=>{increase(cart)}}>+</Button>
           {cart.quantity}
           <Button className="w-20">-</Button>
         </CardFooter>

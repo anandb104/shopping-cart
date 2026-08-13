@@ -11,8 +11,9 @@ import {
     product:Product;
     addtocart:(product:Product)=>void;
     quantity:number;
+    increase:(product:Product)=>void;
   }
-export default function Productcard({product,addtocart,quantity}:Productcardprops){
+export default function Productcard({product,addtocart,quantity,increase}:Productcardprops){
     return(
         <Card className="relative mx-auto max-w-sm pt-0 h-120 w-200 ">
         <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
@@ -34,7 +35,7 @@ export default function Productcard({product,addtocart,quantity}:Productcardprop
           </CardFooter>
           : <CardFooter className="flex justify-between flex-1">
              <div>Price: {product.price}$</div>
-          <Button className="w-20">+</Button>
+          <Button className="w-20" onClick={()=>{increase(product)}}>+</Button>
          {quantity}
           <Button className="w-20">-</Button></CardFooter>}
       </Card>
