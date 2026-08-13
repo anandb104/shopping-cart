@@ -7,7 +7,11 @@ import {
   import {NavLink} from "react-router-dom";
   import shoppingcart from "../assets/shopping-cart.png";
   import logo from "../assets/logo.png";
-  export default function Header(){
+  import type {Cartitems} from "./types/product";
+  type headerprops={
+    cart:Cartitems[];
+  }
+  export default function Header({cart}:headerprops){
     return(
         <div className="bg-amber-300 flex justify-center h-20 items-center gap-125">
              <NavigationMenu>
@@ -56,7 +60,7 @@ import {
         <NavigationMenuItem>
             <NavigationMenuLink  asChild className="text-xl">
             <NavLink to="/cart">
-            <img src={shoppingcart} className="h-7 "></img>(0)
+            <img src={shoppingcart} className="h-7 "></img>({cart.length})
             </NavLink>
             </NavigationMenuLink>
         </NavigationMenuItem>

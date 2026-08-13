@@ -3,11 +3,15 @@ import './App.css'
 import Header  from './components/Header';
 import Footer  from './components/Footer';
 import Home from './components/Home';
+import type {Cartitems} from "./types/product";
 import { Outlet } from 'react-router';
-function App() {
+type appprops={
+cart:Cartitems[];
+}
+function App({cart}:appprops) {
   return (
     <div className='flex flex-col min-h-screen'>
-    <Header/>
+    <Header cart={cart}/>
     <Outlet/>
     <Footer/>
     </div>

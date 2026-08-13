@@ -10,8 +10,9 @@ import {
   interface Productcardprops{
     product:Product;
     addtocart:(product:Product)=>void;
+    quantity:number;
   }
-export default function Productcard({product,addtocart}:Productcardprops){
+export default function Productcard({product,addtocart,quantity}:Productcardprops){
     return(
         <Card className="relative mx-auto max-w-sm pt-0 h-120 w-200 ">
         <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
@@ -26,10 +27,16 @@ export default function Productcard({product,addtocart}:Productcardprops){
           {product.description}
           </CardDescription>
         </CardHeader>
+        {quantity==0?
         <CardFooter className="flex justify-between flex-1">
          <div>Price: {product.price}$</div>
           <Button className="w-25" onClick={()=>{addtocart(product)}}>Add To Cart</Button>
-        </CardFooter>
+          </CardFooter>
+          : <CardFooter className="flex justify-between flex-1">
+             <div>Price: {product.price}$</div>
+          <Button className="w-20">+</Button>
+         {quantity}
+          <Button className="w-20">-</Button></CardFooter>}
       </Card>
     )
 }

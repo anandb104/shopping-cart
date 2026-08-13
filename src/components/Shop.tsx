@@ -1,5 +1,5 @@
 import bgimage from "../assets/bgimg.jpg";
-import {type Product} from "../types/product";
+import type {Product,Cartitems} from "../types/product";
 import { useEffect, useState } from "react";
 import { Spinner } from "@/components/ui/spinner";
 import Productcard from "../components/Productcard.tsx";
@@ -13,8 +13,9 @@ import {
   } from "@/components/ui/empty"
     type shopprops={
       addtocart:(product:Product)=>void;
+      cart:Cartitems[];
     };
-export default function Shop({addtocart}:shopprops){
+export default function Shop({addtocart,cart}:shopprops){
    const [product,setproduct]=useState<Product[]>([]);
    const [loading,setloading]=useState<boolean>(true);
    useEffect(()=>{
@@ -47,7 +48,8 @@ export default function Shop({addtocart}:shopprops){
     return(
         <div className="flex flex-wrap gap-5 bg-cover bg-center items-center justify-center text-black font-['Black_Ops_One'] overflow-scroll h-215 p-5" style={{backgroundImage:`url(${bgimage})`}}>
             {product.map((item)=>{
-            return <Productcard key={item.id} product={item} addtocart={addtocart}/>})}
+               const cartitem=cart.find((cartproduct)=>cartproduct.id==item.id);
+            return <Productcard key={item.id} product={item} addtocart={addtocart} quantity={cartitem?.quantity??0}/>})}
         </div>
     );
 }

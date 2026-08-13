@@ -22,10 +22,10 @@ function addtocart(product:Product){
 const router=createBrowserRouter([
   {
     path:"/",
-    element:<App/>,
+    element:<App cart={cart}/>,
     children:[
     {path:"/",element:<Home/>},
-    {path:"/shop",element:<Shop addtocart={addtocart}/>},
+    {path:"/shop",element:<Shop addtocart={addtocart} cart={cart}/>},
     {path:"/about",element:<About/>},
     {path:"/cart",element:<Cart cart={cart}/>},
     ]
