@@ -7,7 +7,7 @@ import {
   import {NavLink} from "react-router-dom";
   import shoppingcart from "../assets/shopping-cart.png";
   import logo from "../assets/logo.png";
-  import type {Cartitems} from "./types/product";
+  import  { type Cartitems} from "../types/product";
   type headerprops={
     cart:Cartitems[];
   }
