@@ -1,16 +1,45 @@
 import bgimage from "../assets/bgimg.jpg";
 import {type Product} from "../types/product";
 import { useEffect, useState } from "react";
+import { Spinner } from "@/components/ui/spinner";
 import Productcard from "../components/Productcard.tsx";
+import {
+    Empty,
+    EmptyContent,
+    EmptyDescription,
+    EmptyHeader,
+    EmptyMedia,
+    EmptyTitle,
+  } from "@/components/ui/empty"
 export default function Shop(){
    const [product,setproduct]=useState<Product[]>([]);
+   const [loading,setloading]=useState<boolean>(true);
    useEffect(()=>{
     fetch(`https://fakestoreapi.com/products`)
     .then((response)=>
         response.json())
     .then((data)=>{
         setproduct(data);})
+    .finally(()=>setloading(false));
+
 },[])
+    if(loading){
+        return (
+            <Empty className="w-full">
+            <EmptyHeader>
+              <EmptyMedia variant="icon">
+                <Spinner />
+              </EmptyMedia>
+              <EmptyTitle>Processing your request</EmptyTitle>
+              <EmptyDescription>
+                Please wait while we process your request. Do not refresh the page.
+              </EmptyDescription>
+            </EmptyHeader>
+            <EmptyContent>
+            </EmptyContent>
+          </Empty>
+        );
+    }
     return(
         <div className="flex flex-wrap gap-5 bg-cover bg-center items-center justify-center text-black font-['Black_Ops_One'] overflow-scroll h-215 p-5" style={{backgroundImage:`url(${bgimage})`}}>
             {product.map((item)=>{

@@ -1,7 +1,5 @@
 import {
     Card,
-    CardAction,
-    CardContent,
     CardDescription,
     CardFooter,
     CardHeader,
@@ -28,7 +26,7 @@ export default function Productcard({product}:Productcardprops){
           </CardDescription>
         </CardHeader>
         <CardFooter className="flex justify-between flex flex-1">
-         <div>{product.price}</div>
+         <div>Price: {product.price}$</div>
           <Button className="w-25">Add To Cart</Button>
         </CardFooter>
       </Card>
