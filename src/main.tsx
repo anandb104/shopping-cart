@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.tsx'
 import Home from './components/Home.tsx';
 import About from './components/About.tsx';
-import type {Product,Cartitems} from "../types/product.ts";
+import type {Product,Cartitems} from "./types/product.ts";
 import Shop from './components/Shop.tsx';
 import Cart from './components/Cart.tsx';
 import { createBrowserRouter,RouterProvider } from 'react-router';
@@ -19,12 +19,12 @@ function addtocart(product:Product){
     }
   });
 }
-function increase(product){
+function increase(product:Product){
   setcart((currentcart)=>{
     return currentcart.map((item)=>(item.id==product.id)?{...item,quantity:item.quantity+1}:item);
   })
 }
-function decrease(product){
+function decrease(product:Product){
   setcart((currentcart)=>{
     return currentcart.map((item)=>(item.id==product.id)?{...item,quantity:item.quantity-1}:item);
   })

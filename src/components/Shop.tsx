@@ -1,6 +1,6 @@
 import bgimage from "../assets/bgimg.jpg";
 import type {Product,Cartitems} from "../types/product";
-import { useEffect, useState, type SetStateAction,type Dispatch } from "react";
+import { useEffect, useState} from "react";
 import { Spinner } from "@/components/ui/spinner";
 import Productcard from "../components/Productcard.tsx";
 import {
