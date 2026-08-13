@@ -11,6 +11,6 @@ export  interface Product{
     };
 }
 
-export interface Items extends Product{
+export interface Cartitems extends Product{
     quantity:number;
 }

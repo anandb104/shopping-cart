@@ -11,7 +11,10 @@ import {
     EmptyMedia,
     EmptyTitle,
   } from "@/components/ui/empty"
-export default function Shop(){
+    type shopprops={
+      addtocart:(product:Product)=>void;
+    };
+export default function Shop({addtocart}:shopprops){
    const [product,setproduct]=useState<Product[]>([]);
    const [loading,setloading]=useState<boolean>(true);
    useEffect(()=>{
@@ -21,10 +24,10 @@ export default function Shop(){
     .then((data)=>{
         setproduct(data);})
     .finally(()=>setloading(false));
-
 },[])
     if(loading){
         return (
+            <div className="flex flex-wrap gap-5 bg-cover bg-center items-center justify-center text-black font-['Black_Ops_One'] overflow-scroll h-215 p-5" style={{backgroundImage:`url(${bgimage})`}}>
             <Empty className="w-full">
             <EmptyHeader>
               <EmptyMedia variant="icon">
@@ -38,12 +41,13 @@ export default function Shop(){
             <EmptyContent>
             </EmptyContent>
           </Empty>
+          </div>
         );
     }
     return(
         <div className="flex flex-wrap gap-5 bg-cover bg-center items-center justify-center text-black font-['Black_Ops_One'] overflow-scroll h-215 p-5" style={{backgroundImage:`url(${bgimage})`}}>
             {product.map((item)=>{
-            return <Productcard key={item.id} product={item}/>})}
+            return <Productcard key={item.id} product={item} addtocart={addtocart}/>})}
         </div>
     );
 }
