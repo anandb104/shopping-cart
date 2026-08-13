@@ -14,7 +14,7 @@ import {
              <NavigationMenu>
         <NavigationMenuList>
         <NavigationMenuItem>
-            <NavigationMenuLink href="/" >
+            <NavigationMenuLink href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" >
             <img src={facebook} className="h-10"></img>
             </NavigationMenuLink>
         </NavigationMenuItem>
@@ -24,7 +24,7 @@ import {
         <NavigationMenu>
         <NavigationMenuList>
         <NavigationMenuItem>
-            <NavigationMenuLink href="/">
+            <NavigationMenuLink href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
             <img src={instagram} className="h-10"></img>
             </NavigationMenuLink>
         </NavigationMenuItem>
@@ -34,7 +34,7 @@ import {
         <NavigationMenu>
         <NavigationMenuList>
         <NavigationMenuItem>
-            <NavigationMenuLink href="/">
+            <NavigationMenuLink href="https://github.com/anandb104">
             <img src={youtube} className="h-10"></img>
             </NavigationMenuLink>
         </NavigationMenuItem>
@@ -44,7 +44,7 @@ import {
         <NavigationMenu>
         <NavigationMenuList>
         <NavigationMenuItem>
-            <NavigationMenuLink href="/cart" className="text-xl">
+            <NavigationMenuLink href="https://github.com/anandb104" className="text-xl">
             <img src={twitter} className="h-10 "></img>
             </NavigationMenuLink>
         </NavigationMenuItem>

@@ -1,11 +1,5 @@
 import bgimage from "../assets/bgimg.jpg";
-import { Button } from "@/components/ui/button"
-import bru from "../assets/bru.png";
-import nescafe from "../assets/nescafe.png";
-import continental from "../assets/continental.png";
-import logo from "../assets/logo.png";
-
-export default function Home(){
+export default function About(){
     return(
         <div className="flex flex-1 gap-15 flex-col bg-cover bg-center text-4xl items-center justify-center text-black font-['Black_Ops_One'] pl-2.5 " style={{backgroundImage:`url(${bgimage})`}}>
             <div className="mt-10 flex gap-10 flex-col justify-center items-center">
