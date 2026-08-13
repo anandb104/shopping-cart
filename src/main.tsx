@@ -21,8 +21,12 @@ function addtocart(product:Product){
 }
 function increase(product){
   setcart((currentcart)=>{
-    const exist=currentcart.find((item)=>(item.id==product.id));
     return currentcart.map((item)=>(item.id==product.id)?{...item,quantity:item.quantity+1}:item);
+  })
+}
+function decrease(product){
+  setcart((currentcart)=>{
+    return currentcart.map((item)=>(item.id==product.id)?{...item,quantity:item.quantity-1}:item);
   })
 }
 const router=createBrowserRouter([
@@ -31,9 +35,9 @@ const router=createBrowserRouter([
     element:<App cart={cart}/>,
     children:[
     {path:"/",element:<Home/>},
-    {path:"/shop",element:<Shop addtocart={addtocart} cart={cart} increase={increase}/>},
+    {path:"/shop",element:<Shop addtocart={addtocart} cart={cart} increase={increase} decrease={decrease}/>},
     {path:"/about",element:<About/>},
-    {path:"/cart",element:<Cart cart={cart} increase={increase}/>},
+    {path:"/cart",element:<Cart cart={cart} increase={increase} decrease={decrease}/>},
     ]
   }
 ]);

@@ -15,8 +15,9 @@ import {
       addtocart:(product:Product)=>void;
       cart:Cartitems[];
       increase:(product:Product)=>void;
+      decrease:(product:Product)=>void;
     };
-export default function Shop({addtocart,cart,increase}:shopprops){
+export default function Shop({addtocart,cart,increase,decrease}:shopprops){
    const [product,setproduct]=useState<Product[]>([]);
    const [loading,setloading]=useState<boolean>(true);
    useEffect(()=>{
@@ -50,7 +51,7 @@ export default function Shop({addtocart,cart,increase}:shopprops){
         <div className="flex flex-wrap gap-5 bg-cover bg-center items-center justify-center text-black font-['Black_Ops_One'] overflow-scroll h-215 p-5" style={{backgroundImage:`url(${bgimage})`}}>
             {product.map((item)=>{
                const cartitem=cart.find((cartproduct)=>cartproduct.id==item.id);
-            return <Productcard key={item.id} product={item} addtocart={addtocart} quantity={cartitem?.quantity??0} increase={increase}/>})}
+            return <Productcard key={item.id} product={item} addtocart={addtocart} quantity={cartitem?.quantity??0} increase={increase} decrease={decrease}/>})}
         </div>
     );
 }

@@ -10,8 +10,9 @@ import {
   type cartcardprop={
    cart:Cartitems;
    increase:(product:Product)=>void;
+   decrease:(product:Product)=>void;
   };
-export default function Cartcard({cart,increase}:cartcardprop){
+export default function Cartcard({cart,increase,decrease}:cartcardprop){
     return (
         <Card className="relative mx-auto max-w-sm pt-0 h-120 w-200 ">
         <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
@@ -30,7 +31,7 @@ export default function Cartcard({cart,increase}:cartcardprop){
          <div>Price: {cart.price}$</div>
           <Button className="w-20" onClick={()=>{increase(cart)}}>+</Button>
           {cart.quantity}
-          <Button className="w-20">-</Button>
+          <Button className="w-20" onClick={()=>{decrease(cart)}}>-</Button>
         </CardFooter>
       </Card>
     )
